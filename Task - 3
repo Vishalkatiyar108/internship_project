@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Clone</title>
+    <style>
+        /* Basic reset and global styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        header {
+            background-color: #141414;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            color: #e50914;
+        }
+
+        header nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        header nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            padding: 5px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        header nav a:hover {
+            background-color: #e50914;
+        }
+
+        /* Banner section (hero section) */
+        .banner {
+            position: relative;
+            height: 500px;
+            background: url('https://via.placeholder.com/1920x1080.png?text=Netflix+Banner') no-repeat center center/cover;
+            color: white;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .banner h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .banner p {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .banner .btn {
+            padding: 10px 20px;
+            background-color: #e50914;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .banner .btn:hover {
+            background-color: #f40612;
+        }
+
+        /* Movie grid */
+        .movie-section {
+            padding: 20px;
+        }
+
+        .movie-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .movie-item {
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .movie-item:hover {
+            transform: scale(1.1);
+        }
+
+        .movie-item img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: #141414;
+            padding: 20px;
+            text-align: center;
+            color: #999;
+            margin-top: 30px;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header section -->
+    <header>
+        <h1>Netflix Clone</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Series</a>
+            <a href="#">Movies</a>
+            <a href="#">New & Popular</a>
+            <a href="#">My List</a>
+        </nav>
+    </header>
+
+    <!-- Banner section -->
+    <section class="banner">
+        <h2>Trending Now</h2>
+        <p>Watch the latest hits on Netflix</p>
+        <button class="btn">Play</button>
+    </section>
+
+    <!-- Movie grid section -->
+    <section class="movie-section">
+        <h2>Popular Movies</h2>
+        <div class="movie-grid">
+            <div class="movie-item">
+                <img src="https://via.placeholder.com/200x300.png?text=Inception" alt="Inception">
+            </div>
+            <div class="movie-item">
+                <img src="https://via.placeholder.com/200x300.png?text=The+Dark+Knight" alt="The Dark Knight">
+            </div>
+            <div class="movie-item">
+                <img src="https://via.placeholder.com/200x300.png?text=Interstellar" alt="Interstellar">
+            </div>
+            <div class="movie-item">
+                <img src="https://via.placeholder.com/200x300.png?text=Avengers+Endgame" alt="Avengers Endgame">
+            </div>
+            <div class="movie-item">
+                <img src="https://via.placeholder.com/200x300.png?text=Mad+Max+Fury+Road" alt="Mad Max Fury Road">
+            </div>
+            <div class="movie-item">
+                <img src="https://via.placeholder.com/200x300.png?text=Star+Wars+The+Force+Awakens" alt="Star Wars The Force Awakens">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer section -->
+    <footer>
+        <p>© 2024 Netflix Clone. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
