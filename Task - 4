@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorful Animated Webpage with Features</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header */
+        header {
+            background-color: #ff6347;
+            color: white;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #fff;
+            animation: fadeInLeft 1s ease-out;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+        }
+
+        nav li {
+            margin-left: 25px;
+        }
+
+        nav a {
+            color: #fff;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffeb3b;
+        }
+
+        /* Hero Section */
+        
+
+        .hero h1 {
+            font-size: 4rem;
+            opacity: 0;
+            animation: fadeInUp 1.5s forwards;
+        }
+
+        .hero p {
+            font-size: 1.8rem;
+            margin-top: 20px;
+            opacity: 0;
+            animation: fadeInUp 2s forwards;
+            animation-delay: 0.5s;
+        }
+
+        /* Features Section with Image Carousel */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 40px;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .feature-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        
+
+        .feature-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-card:nth-child(1) {
+            background-color: #ff6347;
+        }
+
+        .feature-card:nth-child(2) {
+            background-color: #ffeb3b;
+        }
+
+        .feature-card:nth-child(3) {
+            background-color: #00bcd4;
+        }
+
+        .feature-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .feature-card p {
+            font-size: 1.1rem;
+            color: #fff;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background-color: #fff;
+            padding: 30px;
+            margin: 40px auto;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 15px;
+            background-color: #ff6347;
+            color: white;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #ff4500;
+        }
+
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ff6347;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            font-size: 1.5rem;
+        }
+
+        .scroll-to-top:hover {
+            background-color: #ff4500;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(to left, #ff6347, #ffeb3b);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            animation: fadeIn 3s ease-out;
+        }
+
+        footer .social-links a {
+            color: white;
+            margin: 0 15px;
+            font-size: 1.5rem;
+        }
+
+        footer .social-links a:hover {
+            color: #ffeb3b;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.4rem;
+            }
+
+            .contact-form {
+                margin: 20px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">vK</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div>
+            <h1>Stock Analyzer</h1>
+            <p>We are SEBI registered</p>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <img src="https://via.placeholder.com/400x300/ff6347/ffffff?text=Feature+1" alt="Feature 1">
+            <h3>Top Stocks</h3>
+            
+        </div>
+        <div class="feature-card">
+            <img src="https://via.placeholder.com/400x300/ffeb3b/ffffff?text=Feature+2" alt="Feature 2">
+            <h3>Best intraday stocks</h3>
+           
+        </div>
+        <div class="feature-card">
+            <img src="https://via.placeholder.com/400x300/00bcd4/ffffff?text=Feature+3" alt="Feature 3">
+            <h3>Future & Option</h3>
+           
+        </div>
+    </section>
+
+    <section class="contact-form">
+        <h2>Contact Us</h2>
+        <form action="#">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <div class="scroll-to-top" onclick="window.scrollTo(0, 0)">↑</div>
+
+    <footer>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+        <p>© 2024 Colorful Company | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // Show or hide the scroll to top button
+        window.onscroll = function() {
+            var scrollButton = document.querySelector('.scroll-to-top');
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollButton.style.display = 'block';
+            } else {
+                scrollButton.style.display = 'none';
+            }
+        };
+    </script>
+</body>
+</html>
